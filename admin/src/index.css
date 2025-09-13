@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CivicPulse Admin Design System - Professional Municipal Theme */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    /* Overlays */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Civic Primary (Professional Blue) */
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 70% 70%;
+
+    /* Secondary (Light Blue) */
+    --secondary: 213 27% 84%;
+    --secondary-foreground: 215 25% 27%;
+
+    /* Muted & Subtle */
+    --muted: 213 27% 84%;
+    --muted-foreground: 215 13% 44%;
+
+    /* Accent (Success Green) */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Interactive Elements */
+    --border: 213 12% 88%;
+    --input: 213 12% 95%;
+    --ring: 214 84% 56%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 70% 70%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(213 27% 96%));
+    --gradient-civic: linear-gradient(135deg, hsl(214 84% 56%), hsl(200 84% 56%));
+
+    /* Shadows */
+    --shadow-card: 0 2px 10px -3px hsl(214 84% 56% / 0.1);
+    --shadow-dropdown: 0 10px 38px -10px hsl(214 84% 56% / 0.35);
+
+    /* Geometric */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Professional Night Theme */
+    --background: 215 28% 9%;
+    --foreground: 213 31% 91%;
+
+    /* Card System */
+    --card: 215 28% 12%;
+    --card-foreground: 213 31% 91%;
+
+    /* Overlays */
+    --popover: 215 28% 12%;
+    --popover-foreground: 213 31% 91%;
+
+    /* Civic Primary (Bright Blue) */
+    --primary: 214 84% 65%;
+    --primary-foreground: 215 28% 9%;
+    --primary-glow: 214 70% 75%;
+
+    /* Secondary */
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 213 31% 91%;
+
+    /* Muted */
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 65%;
+
+    /* Accent */
+    --accent: 142 76% 45%;
+    --accent-foreground: 215 28% 9%;
+
+    /* Status Colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+    --success: 142 76% 45%;
+    --success-foreground: 215 28% 9%;
+
+    /* Interactive */
+    --border: 215 25% 18%;
+    --input: 215 25% 15%;
+    --ring: 214 84% 65%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 65%), hsl(214 70% 75%));
+    --gradient-card: linear-gradient(145deg, hsl(215 28% 12%), hsl(215 25% 15%));
+    --gradient-civic: linear-gradient(135deg, hsl(214 84% 65%), hsl(200 84% 65%));
+
+    /* Shadows */
+    --shadow-card: 0 2px 10px -3px hsl(0 0% 0% / 0.3);
+    --shadow-dropdown: 0 10px 38px -10px hsl(0 0% 0% / 0.5);
+
+    /* Sidebar Tokens */
+    --sidebar-background: 215 28% 9%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 214 84% 65%;
+    --sidebar-primary-foreground: 215 28% 9%;
+    --sidebar-accent: 215 25% 15%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 215 25% 18%;
+    --sidebar-ring: 214 84% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-border/80;
+  }
+}
+
+@layer components {
+  /* Status indicators */
+  .status-new {
+    @apply bg-primary/10 text-primary border-primary/20;
+  }
+  
+  .status-in-progress {
+    @apply bg-warning/10 text-warning border-warning/20;
+  }
+  
+  .status-resolved {
+    @apply bg-success/10 text-success border-success/20;
+  }
+  
+  .status-critical {
+    @apply bg-destructive/10 text-destructive border-destructive/20;
+  }
+
+  /* Civic gradient utilities */
+  .bg-civic-gradient {
+    background: var(--gradient-civic);
+  }
+  
+  .bg-card-gradient {
+    background: var(--gradient-card);
+  }
+
+  /* Animation utilities */
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Chart animations */
+  @keyframes chartEnter {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-chart-enter {
+    animation: chartEnter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
